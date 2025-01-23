@@ -1,8 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@theme {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-transparent: transparent;
+  --color-soft-blue: hsl(231, 69%, 60%);
+  --color-soft-red: hsl(0, 94%, 66%);
+  --color-grayish-blue: hsl(229, 8%, 60%);
+  --color-dark-blue: hsl(229, 31%, 21%);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
   html {
     font-family: "Rubik", sans-serif;
   }
@@ -21,12 +46,10 @@
   }
 }
 
-@layer components {
-  .box {
-    @apply mx-auto w-[85%];
-  }
+@utility box {
+  @apply mx-auto w-[85%];
+}
 
-  .btn {
-    @apply rounded bg-soft-blue px-4 py-2 font-medium text-white transition duration-100 ease-in-out hover:bg-white hover:text-soft-blue hover:outline hover:outline-2 hover:outline-soft-blue;
-  }
+@utility btn {
+  @apply bg-soft-blue hover:text-soft-blue hover:outline-soft-blue rounded-sm px-4 py-2 font-medium text-white transition duration-100 ease-in-out hover:bg-white hover:outline-2;
 }

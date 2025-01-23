@@ -40,10 +40,10 @@ function Form() {
   return (
     <form noValidate autocomplete="off" onSubmit={handleSubmit}>
       <div class="flex items-start gap-4 max-sm:flex-col">
-        <div class="w-full rounded bg-soft-red">
+        <div class="bg-soft-red w-full rounded-sm">
           <div
             class={twMerge(
-              "relative rounded border-soft-red",
+              "border-soft-red relative rounded-sm",
               isInvalid() && "border-2",
             )}
           >
@@ -54,7 +54,7 @@ function Form() {
               name="email"
               placeholder="Enter your email address"
               class={twMerge(
-                "block w-full rounded px-4 py-2 text-black focus:outline-none focus:ring-2 focus:ring-black",
+                "block w-full rounded-sm bg-white px-4 py-2 text-black focus:ring-2 focus:ring-black focus:outline-hidden",
                 isInvalid() && "focus:ring-soft-red",
               )}
             />
@@ -62,7 +62,7 @@ function Form() {
               <img
                 src="/images/icon-error.svg"
                 alt="error"
-                class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2"
+                class="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2"
               />
             </Show>
           </div>
@@ -74,7 +74,7 @@ function Form() {
         </div>
         <button
           type="submit"
-          class="btn block shrink-0 bg-soft-red hover:text-soft-red hover:outline-soft-red max-sm:w-full"
+          class="btn bg-soft-red hover:text-soft-red hover:outline-soft-red block shrink-0 hover:cursor-pointer max-sm:w-full"
         >
           Contact Us
         </button>

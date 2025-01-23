@@ -47,17 +47,17 @@ export default Features;
 
 function Tab() {
   return (
-    <div class="grid gap-4 text-center sm:grid-cols-3 sm:border-b-[1px] sm:border-b-grayish-blue lg:mx-auto lg:w-2/3">
+    <div class="sm:border-b-grayish-blue grid gap-4 text-center sm:grid-cols-3 sm:border-b-[1px] lg:mx-auto lg:w-2/3">
       <For each={tabs}>
         {(tab, i) => (
           <button
             onClick={() => setIndex(i())}
-            class="max-sm:border-b-[1px] max-sm:border-b-grayish-blue"
+            class="max-sm:border-b-grayish-blue hover:cursor-pointer max-sm:border-b-1"
           >
             <div
               class={twMerge(
                 "mx-auto pb-4 max-sm:w-max",
-                i() === index() && "border-b-2 border-soft-red",
+                i() === index() && "border-soft-red border-b-2",
               )}
             >
               {tab}
@@ -80,7 +80,7 @@ function Content() {
             alt={activeContent().title}
             class="max-lg:max-h-80"
           />
-          <div class="absolute -bottom-8 right-16 -z-10 h-5/6 w-[2000px] rounded-full bg-soft-blue" />
+          <div class="bg-soft-blue absolute right-16 -bottom-8 -z-10 h-5/6 w-[2000px] rounded-full" />
         </div>
       </div>
       <div class="space-y-4 max-lg:text-center">
