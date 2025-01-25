@@ -1,4 +1,4 @@
-import { For, Show } from "solid-js";
+import { For } from "solid-js";
 import { createStore } from "solid-js/store";
 import { twMerge } from "tailwind-merge";
 
