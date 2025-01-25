@@ -58,7 +58,7 @@ function Accordion() {
             <button
               onClick={() => setIsOpen(i(), !isOpen[i()])}
               class={twMerge(
-                "flex w-full items-center justify-between border-t-[1px] border-grayish-blue/30 py-4 hover:cursor-pointer",
+                "border-grayish-blue/30 flex w-full items-center justify-between border-t-[1px] py-4 hover:cursor-pointer",
                 i() === 3 ? (isOpen[3] ? "" : "border-b-[1px]") : "",
               )}
             >
@@ -66,12 +66,20 @@ function Accordion() {
               <img
                 src="/images/icon-arrow.svg"
                 alt="arrow"
-                class={twMerge("h-min", isOpen[i()] && "rotate-180")}
+                class={twMerge(
+                  "h-min transition-transform duration-300",
+                  isOpen[i()] && "rotate-180",
+                )}
               />
             </button>
-            <Show when={isOpen[i()]}>
+            <div
+              class={twMerge(
+                "overflow-hidden transition-all duration-400 ease-in-out",
+                isOpen[i()] ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
+              )}
+            >
               <p class="py-4">{qna.answer}</p>
-            </Show>
+            </div>
           </>
         )}
       </For>

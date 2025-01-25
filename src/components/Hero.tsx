@@ -3,7 +3,7 @@ function Hero() {
     <section>
       <div class="box grid items-center gap-8 lg:grid-cols-2">
         <div class="grid place-items-center lg:col-start-2">
-          <div class="relative inline-block after:absolute after:bottom-0 after:left-20 after:-z-10 after:h-3/4 after:w-dvw after:rounded-full after:bg-soft-blue">
+          <div class="after:bg-soft-blue relative inline-block after:absolute after:bottom-0 after:left-20 after:-z-10 after:h-3/4 after:w-dvw after:rounded-full">
             <img
               src="/images/illustration-hero.svg"
               alt="Person browsing website with bookmark manager interface"
@@ -24,7 +24,7 @@ function Hero() {
             </a>
             <a
               href="/firefox"
-              class="btn bg-grayish-blue/10 text-dark-blue shadow-lg hover:text-dark-blue hover:shadow-none hover:outline-dark-blue"
+              class="btn bg-grayish-blue/10 text-dark-blue hover:text-dark-blue hover:outline-dark-blue shadow-lg hover:shadow-none"
             >
               Get it on Firefox
             </a>

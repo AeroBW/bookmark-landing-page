@@ -35,7 +35,7 @@ function Download() {
             {(browser, i) => (
               <div
                 class={twMerge(
-                  "rounded-lg py-6 shadow-xl lg:row-span-7",
+                  "rounded-lg py-8 shadow-xl lg:row-span-7",
                   i() === 0 && "lg:col-start-1 lg:row-start-1",
                   i() === 1 && "lg:col-start-2 lg:row-start-2",
                   i() === 2 && "lg:col-start-3 lg:row-start-3",
@@ -49,7 +49,7 @@ function Download() {
                 <img
                   src="/images/bg-dots.svg"
                   alt="separator"
-                  class="mb-6 w-full"
+                  class="mb-8 w-full"
                 />
                 <a href={`/${browser.name.toLowerCase()}`} class="btn">
                   Add & Install Extension
